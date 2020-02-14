@@ -1,29 +1,16 @@
 package intoDarkness.relics;
 
-import basemod.BaseMod;
-import basemod.abstracts.CustomBottleRelic;
 import basemod.abstracts.CustomRelic;
-import basemod.abstracts.CustomSavable;
 import com.badlogic.gdx.graphics.Texture;
-import com.evacipated.cardcrawl.mod.stslib.actions.common.AutoplayCardAction;
-import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AutoplayField;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.FontHelper;
-import com.megacrit.cardcrawl.helpers.PowerTip;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import theDefault.DefaultMod;
-import theDefault.patches.relics.BottledPlaceholderField;
-import theDefault.util.TextureLoader;
+import com.megacrit.cardcrawl.powers.StrengthPower;
+import intoDarkness.DefaultMod;
+import intoDarkness.util.TextureLoader;
 
-import java.util.Iterator;
-import java.util.function.Predicate;
-
-import static theDefault.DefaultMod.makeRelicOutlinePath;
-import static theDefault.DefaultMod.makeRelicPath;
+import static intoDarkness.DefaultMod.makeRelicOutlinePath;
+import static intoDarkness.DefaultMod.makeRelicPath;
 
 public class TestRelic extends CustomRelic {
     public static final String ID = DefaultMod.makeID("TestRelic");
@@ -48,6 +35,6 @@ public class TestRelic extends CustomRelic {
 
     @Override
     public void onUnequip() {
-        AbstractDungeon.player.increaseMaxhealth(1);
+        
     }
 }
