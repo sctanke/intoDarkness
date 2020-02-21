@@ -13,8 +13,8 @@ import static intoDarkness.DefaultMod.makeRelicPath;
 
 public class TestRelic extends CustomRelic {
     public static final String ID = DefaultMod.makeID("TestRelic");
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("PlaceHolder.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("PlaceHolder.png"));
 
     public TestRelic() {
         super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.MAGICAL);
