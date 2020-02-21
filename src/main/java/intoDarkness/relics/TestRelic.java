@@ -32,6 +32,6 @@ public class TestRelic extends CustomRelic {
 
     @Override
     public void onEquip() {
-        AbstractDungeon.player.decreaseMaxHealth(1);
+        //?AbstractDungeon.player.decreaseMaxHealth(1);
     }
 }
