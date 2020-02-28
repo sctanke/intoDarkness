@@ -37,5 +37,12 @@
       ".",
       "Select a card to bottle for "
     ]
+  },
+  "intoDarkness:IngrainedFear": {
+    "NAME": "Ingrained Fear",
+    "FLAVOR": "Spooky Scary",
+    "DESCRIPTIONS": [
+      "Gain 1 weak at battle start"
+    ]
   }
 }
