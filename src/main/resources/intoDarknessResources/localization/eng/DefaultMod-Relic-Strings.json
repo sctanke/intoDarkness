@@ -44,5 +44,12 @@
     "DESCRIPTIONS": [
       "Gain 1 weak at battle start"
     ]
+  },
+  "intoDarkness:MarkOfTheBeast": {
+    "NAME": "Mark of the Beast",
+    "FLAVOR": "With great sacrifice comes great reward.",
+    "DESCRIPTIONS": [
+      "Gain 6 Dex, 6 Strength, and 6 Artifact."
+    ]
   }
 }
