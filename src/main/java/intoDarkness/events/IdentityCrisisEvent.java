@@ -116,6 +116,8 @@ public class IdentityCrisisEvent extends AbstractImageEvent {
                         this.imageEventText.clearRemainingOptions();
                         screenNum = 1;
                         break;
+                    default:
+                        throw new IllegalStateException("Unexpected value: " + i);
                 }
                 break;
             case 1: // Welcome to screenNum = 1;
