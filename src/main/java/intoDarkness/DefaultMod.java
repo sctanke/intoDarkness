@@ -345,7 +345,8 @@ public class DefaultMod implements
         // If you want to have a character-specific event, look at slimebound (CityRemoveEventPatch).
         // Essentially, you need to patch the game and say "if a player is not playing my character class, remove the event from the pool"
         BaseMod.addEvent(IdentityCrisisEvent.ID, IdentityCrisisEvent.class, TheCity.ID);
-        
+        BaseMod.addEvent(twoDoors.ID, twoDoors.class);
+
         // =============== /EVENTS/ =================
         logger.info("Done loading badge Image and mod options");
     }
