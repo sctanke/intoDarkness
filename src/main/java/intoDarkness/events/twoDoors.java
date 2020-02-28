@@ -36,7 +36,7 @@ public class twoDoors extends AbstractImageEvent {
     protected void buttonEffect(int buttonPressed) {
         switch (screenNum) {
             case 0:
-                switch (i) {
+                switch (buttonPressed) {
                     case 0:
                         this.imageEventText.updateBodyText("you see a door of light");
                         this.imageEventText.updateDialogOption(0, OPTIONS[5]);
@@ -62,7 +62,7 @@ public class twoDoors extends AbstractImageEvent {
 
                 }
             case 1:
-                switch (i) {
+                switch (buttonPressed) {
                     case 0: // If you press the first (and this should be the only) button,
                         openMap(); // You'll open the map and end the event.
                         break;
