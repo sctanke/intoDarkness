@@ -58,5 +58,12 @@
     "DESCRIPTIONS": [
       "Provides a random effect in battle."
     ]
+  },
+  "intoDarkness:CursedRevolver": {
+    "NAME": "Cursed Revolver",
+    "FLAVOR": "One in the chamber.",
+    "DESCRIPTIONS": [
+      "1/6 chance to deal 60 damage. Otherwise take 5 damage."
+    ]
   }
 }

@@ -20,16 +20,14 @@ import java.util.Random;
 import static intoDarkness.DefaultMod.makeRelicOutlinePath;
 import static intoDarkness.DefaultMod.makeRelicPath;
 
-public class SlotMachine extends CustomRelic implements ClickableRelic { // You must implement things you want to use from StSlib
+public class CursedRevolver extends CustomRelic implements ClickableRelic { // You must implement things you want to use from StSlib
     /*
-     * https://github.com/daviscook477/BaseMod/wiki/Custom-Relics
-     * StSLib for Clickable Relics
      *
-     * Usable once per turn. Right click: Evoke your rightmost orb.
+     * Usable once per turn. Right click: 1/6 chance for 60 damage. Otherwise take 5 damage.
      */
 
     // ID, images, text.
-    public static final String ID = DefaultMod.makeID("SlotMachine");
+    public static final String ID = DefaultMod.makeID("CursedRevolver");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("default_clickable_relic.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("default_clickable_relic.png"));
@@ -37,7 +35,7 @@ public class SlotMachine extends CustomRelic implements ClickableRelic { // You 
     private boolean usedThisTurn = false; // You can also have a relic be only usable once per combat. Check out Hubris for more examples, including other StSlib things.
     private boolean isPlayerTurn = false; // We should make sure the relic is only activateable during our turn, not the enemies'.
 
-    public SlotMachine() {
+    public CursedRevolver() {
         super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.CLINK);
 
         tips.clear();
@@ -57,30 +55,13 @@ public class SlotMachine extends CustomRelic implements ClickableRelic { // You 
             flash(); // Flash
             stopPulse(); // And stop the pulsing animation (which is started in atPreBattle() below)
             Random rand = new Random();
-            int myRandom = rand.nextInt(5);
-            switch(myRandom) {
-                case 1:
-                    AbstractDungeon.actionManager.addToBottom(new GainGoldAction(25));
-                    break;
-                case 2:
-                    AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player,4));
-                    break;
-                case 3:
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 1), 1));
-                    break;
-                case 4:
-                    AbstractDungeon.actionManager.addToBottom(new LoseHPAction(AbstractDungeon.player, AbstractDungeon.player,25));
-                    break;
-                case 5:
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new WeakPower(AbstractDungeon.player,5,false)));
-                    break;
+            int myRandom = rand.nextInt(5) + 1;
+            if (myRandom == 1) {
+                AbstractDungeon.actionManager.addToBottom(new LoseHPAction(AbstractDungeon.getRandomMonster(), AbstractDungeon.player, 60));
             }
-            //AbstractDungeon.actionManager.addToBottom(new TalkAction(true, DESCRIPTIONS[1], 4.0f, 2.0f)); // Player speech bubble saying "YOU ARE MINE!" (See relic strings)
-            //AbstractDungeon.actionManager.addToBottom(new SFXAction("MONSTER_COLLECTOR_DEBUFF")); // Sound Effect Action of The Collector Nails
-            //AbstractDungeon.actionManager.addToBottom(new VFXAction( // Visual Effect Action of the nails applies on a random monster's position.
-                    //new CollectorCurseEffect(AbstractDungeon.getRandomMonster().hb.cX, AbstractDungeon.getRandomMonster().hb.cY), 2.0F));
-
-            //AbstractDungeon.actionManager.addToBottom(new EvokeOrbAction(1)); // Evoke your rightmost orb
+            else{
+            AbstractDungeon.actionManager.addToBottom(new LoseHPAction(AbstractDungeon.player,AbstractDungeon.player,5));
+            }
         }
         // See that talk action? It has DESCRIPTIONS[1] instead of just hard-coding "You are mine" inside.
         // DO NOT HARDCODE YOUR STRINGS ANYWHERE, it's really bad practice to have "Strings" in your code:
