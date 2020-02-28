@@ -57,23 +57,22 @@ public class SlotMachine extends CustomRelic implements ClickableRelic { // You 
             flash(); // Flash
             stopPulse(); // And stop the pulsing animation (which is started in atPreBattle() below)
             Random rand = new Random();
-            int myRandom = rand.nextInt(5);
-            switch(myRandom) {
-                case 1:
-                    AbstractDungeon.actionManager.addToBottom(new GainGoldAction(25));
-                    break;
-                case 2:
-                    AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player,4));
-                    break;
-                case 3:
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 1), 1));
-                    break;
-                case 4:
-                    AbstractDungeon.actionManager.addToBottom(new LoseHPAction(AbstractDungeon.player, AbstractDungeon.player,25));
-                    break;
-                case 5:
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new WeakPower(AbstractDungeon.player,5,false)));
-                    break;
+            int myRandom = rand.nextInt(100) + 1;
+            AbstractDungeon.actionManager.addToBottom(new GainGoldAction(-25));
+            if (myRandom<5) {
+                AbstractDungeon.actionManager.addToBottom(new GainGoldAction(100));
+            }
+            else if (myRandom >= 5 && myRandom <45) {
+
+                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, 5));
+            }
+            else if (myRandom >= 45 && myRandom < 50) {
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 20), 5));
+            }
+            else if (myRandom >= 50 && myRandom < 70)
+                    AbstractDungeon.actionManager.addToBottom(new LoseHPAction(AbstractDungeon.player, AbstractDungeon.player,15));
+            else{
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new WeakPower(AbstractDungeon.player,1,false)));
             }
             //AbstractDungeon.actionManager.addToBottom(new TalkAction(true, DESCRIPTIONS[1], 4.0f, 2.0f)); // Player speech bubble saying "YOU ARE MINE!" (See relic strings)
             //AbstractDungeon.actionManager.addToBottom(new SFXAction("MONSTER_COLLECTOR_DEBUFF")); // Sound Effect Action of The Collector Nails

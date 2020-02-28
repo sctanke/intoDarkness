@@ -38,6 +38,7 @@ import intoDarkness.relics.IngrainedFear;
 import intoDarkness.relics.MarkOfTheBeast;
 import intoDarkness.relics.SlotMachine;
 import intoDarkness.relics.CursedRevolver;
+import intoDarkness.relics.Bloodthirster;
 
 import intoDarkness.util.IDCheckDontTouchPls;
 import intoDarkness.util.TextureLoader;
@@ -391,6 +392,7 @@ public class DefaultMod implements
         BaseMod.addRelic(new MarkOfTheBeast(), RelicType.SHARED);
         BaseMod.addRelic(new SlotMachine(), RelicType.SHARED);
         BaseMod.addRelic(new CursedRevolver(), RelicType.SHARED);
+        BaseMod.addRelic(new Bloodthirster(), RelicType.SHARED);
         
         // Mark relics as seen (the others are all starters so they're marked as seen in the character file
         UnlockTracker.markRelicAsSeen(BottledPlaceholderRelic.ID);

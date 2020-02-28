@@ -65,5 +65,12 @@
     "DESCRIPTIONS": [
       "1/6 chance to deal 60 damage. Otherwise take 5 damage."
     ]
+  },
+  "intoDarkness:Bloodthirster": {
+    "NAME": "Bloodthirster",
+    "FLAVOR": "Heal yourself by harming others. Just like real life.",
+    "DESCRIPTIONS": [
+      "Heal for 1 health with each card played."
+    ]
   }
 }
