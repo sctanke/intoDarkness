@@ -21,9 +21,10 @@ public class twoDoors extends AbstractImageEvent {
             case 0:
                 switch (i) {
                     case 0:
-                        this.imageEventText.updateBodyText("");
+                        this.imageEventText.updateBodyText("you see a door of light");
                         this.imageEventText.updateDialogOption(0, OPTIONS[5]);
                         this.imageEventText.clearRemainingOptions();
+
                         screenNum = 1;
 
                         AbstractCard c = new TestRelic.makeCopy();
@@ -31,9 +32,17 @@ public class twoDoors extends AbstractImageEvent {
                                 new ShowCardAndObtainEffect(c, (float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2)));
                         break;
                     case 1:
+                        this.imageEventText.updateBodyText("you see a door of light");
+                        this.imageEventText.updateDialogOption(0, OPTIONS[5]);
+                        this.imageEventText.clearRemainingOptions();
+                        
                         screenNum = 1;
+
+                        AbstractCard c = new TestRelic.makeCopy();
+                        AbstractDungeon.effectList.add(
+                                new ShowCardAndObtainEffect(c, (float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2)));
                         break;
-                    //does not work
+
                 }
             case 1:
                 switch (i) {
