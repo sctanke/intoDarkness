@@ -18,7 +18,7 @@ public class MarkOfTheBeast extends CustomRelic {
     /*
      * https://github.com/daviscook477/BaseMod/wiki/Custom-Relics
      *
-     * At the start of each combat, gain 1 Strength (i.e. Vajra)
+     * At the start of each combat, gain 6 Strength, Dex, and Artifact
      */
 
     // ID, images, text.

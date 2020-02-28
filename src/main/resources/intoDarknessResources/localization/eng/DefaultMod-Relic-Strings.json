@@ -51,5 +51,12 @@
     "DESCRIPTIONS": [
       "Gain 6 Dex, 6 Strength, and 6 Artifact."
     ]
+  },
+  "intoDarkness:SlotMachine": {
+    "NAME": "Slot Machine",
+    "FLAVOR": "Care to test your luck?",
+    "DESCRIPTIONS": [
+      "Provides a random effect in battle."
+    ]
   }
 }
