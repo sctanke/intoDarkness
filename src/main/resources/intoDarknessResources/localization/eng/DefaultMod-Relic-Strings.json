@@ -13,6 +13,13 @@
       "At the start of each combat, gain #b1 #yStrength."
     ]
   },
+  "intoDarkness:TestRelic": {
+    "NAME": "Test Relic",
+    "FLAVOR": "fell the pain",
+    "DESCRIPTIONS": [
+      "loss hp when equiped"
+    ]
+  },
   "intoDarkness:DefaultClickableRelic": {
     "NAME": "Right-Clicky Relic",
     "FLAVOR": "The more you right-click it, the more orbs you've evoked in your lifetime.",

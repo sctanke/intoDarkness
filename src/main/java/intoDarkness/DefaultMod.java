@@ -19,16 +19,22 @@ import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import intoDarkness.cards.*;
 import intoDarkness.characters.TheDefault;
 import intoDarkness.events.IdentityCrisisEvent;
+/**
+ * Enter stuff
+ */
 import intoDarkness.potions.PlaceholderPotion;
 import intoDarkness.relics.BottledPlaceholderRelic;
 import intoDarkness.relics.DefaultClickableRelic;
 import intoDarkness.relics.PlaceholderRelic;
 import intoDarkness.relics.PlaceholderRelic2;
+import intoDarkness.relics.TestRelic;
+
 import intoDarkness.util.IDCheckDontTouchPls;
 import intoDarkness.util.TextureLoader;
 import intoDarkness.variables.DefaultCustomVariable;
@@ -376,6 +382,7 @@ public class DefaultMod implements
         
         // This adds a relic to the Shared pool. Every character can find this relic.
         BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
+        BaseMod.addRelic(new TestRelic(), RelicType.SHARED);
         
         // Mark relics as seen (the others are all starters so they're marked as seen in the character file
         UnlockTracker.markRelicAsSeen(BottledPlaceholderRelic.ID);
