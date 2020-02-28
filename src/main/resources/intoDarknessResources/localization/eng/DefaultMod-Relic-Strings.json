@@ -37,5 +37,12 @@
       ".",
       "Select a card to bottle for "
     ]
+  },
+  "intoDarkness:ShroudOfDarkness": {
+    "NAME": "Shroud of Darkness",
+    "FLAVOR": "The Darkness surrounds you",
+    "DESCRIPTIONS": [
+      "Reasons"
+    ]
   }
 }
