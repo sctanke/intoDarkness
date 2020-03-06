@@ -49,13 +49,13 @@ public class twoDoors extends AbstractImageEvent {
                                 new ShowCardAndObtainEffect(c, (float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2)));
                         break;
                     case 1:
-                        this.imageEventText.updateBodyText("you see a door of light");
+                        this.imageEventText.updateBodyText("you see a door of darkness");
                         this.imageEventText.updateDialogOption(0, OPTIONS[5]);
                         this.imageEventText.clearRemainingOptions();
                         
                         screenNum = 1;
 
-                        AbstractCard c = new TestRelic.makeCopy();
+                        c = new TestRelic.makeCopy();
                         AbstractDungeon.effectList.add(
                                 new ShowCardAndObtainEffect(c, (float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2)));
                         break;
