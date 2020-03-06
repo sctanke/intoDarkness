@@ -57,10 +57,10 @@ public class CursedRevolver extends CustomRelic implements ClickableRelic { // Y
             Random rand = new Random();
             int myRandom = rand.nextInt(5) + 1;
             if (myRandom == 1) {
-                AbstractDungeon.actionManager.addToBottom(new LoseHPAction(AbstractDungeon.getRandomMonster(), AbstractDungeon.player, 60));
+                AbstractDungeon.actionManager.addToBottom(new LoseHPAction(AbstractDungeon.getRandomMonster(), AbstractDungeon.player, 30));
             }
             else{
-            AbstractDungeon.actionManager.addToBottom(new LoseHPAction(AbstractDungeon.player,AbstractDungeon.player,5));
+            AbstractDungeon.actionManager.addToBottom(new LoseHPAction(AbstractDungeon.player,AbstractDungeon.player,6));
             }
         }
         // See that talk action? It has DESCRIPTIONS[1] instead of just hard-coding "You are mine" inside.
