@@ -353,6 +353,16 @@ public class DefaultMod implements
         
         // =============== /EVENTS/ =================
         logger.info("Done loading badge Image and mod options");
+
+        //==============/Monsters/==============
+        BaseMod.addMonster(MyBoss.ID, () -> new MyBoss());
+
+        BaseMod.addBoss(Exordium.ID, MyBoss.ID,
+                "images/mymod/ui/map/boss/myBoss.png",
+                "images/mymod/ui/map/bossOutline/myBoss.png");
+    }
+
+
     }
     
     // =============== / POST-INITIALIZE/ =================

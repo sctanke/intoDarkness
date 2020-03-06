@@ -3,11 +3,6 @@ package com.evacipated.cardcrawl.mod.hubris.monsters;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.MathUtils;
-import com.evacipated.cardcrawl.mod.hubris.HubrisMod;
-import com.evacipated.cardcrawl.mod.hubris.actions.common.PureDamageAction;
-import com.evacipated.cardcrawl.mod.hubris.powers.ArmorPiercingPower;
-import com.evacipated.cardcrawl.mod.hubris.powers.IrradiatedRoundsPower;
-import com.evacipated.cardcrawl.mod.hubris.vfx.scene.DeadTorchParticleEffect;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -49,14 +44,9 @@ public class OmenOfDarkness extends AbstractMonster
 
     public OmenOfDarkness()
     {
-        super(NAME, ID, HP, -8.0f, 80.0f, 330, 530, intoDarkness.assetPath("images/monsters/theCity/monster_placeholder.png"), -100.0f, -100.0f);
-        /*
-        loadAnimation("images/monsters/theBottom/cultist/skeleton.atlas", "images/monsters/theBottom/cultist/skeleton.json", 0.75F);
-        AnimationState.TrackEntry e = this.state.setAnimation(0, "waving", true);
-        e.setTime(e.getEndTime() * MathUtils.random());
-        */
+        super(NAME, ID, HP, -8.0f, 80.0f, 330, 530, intoDarknessResources.assetPath("images/monsters/theCity/monster_placeholder.png"), -100.0f, -100.0f);
 
-        this.type = AbstractMonster.EnemyType.BOSS; //todo figure out how to make it the first
+        this.type = EnemyType.BOSS; //todo figure out how to make it the first
         this.dialogX = (-400.0F * Settings.scale);
         this.dialogY = (200.0F * Settings.scale);
 
