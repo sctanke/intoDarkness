@@ -27,7 +27,7 @@ import org.apache.logging.log4j.Logger;
 import intoDarkness.cards.*;
 import intoDarkness.characters.TheDefault;
 import intoDarkness.events.IdentityCrisisEvent;
-/**
+/*
  * Enter stuff
  */
 import intoDarkness.potions.PlaceholderPotion;
@@ -172,6 +172,10 @@ public class DefaultMod implements
     
     public static String makeEventPath(String resourcePath) {
         return getModID() + "Resources/images/events/" + resourcePath;
+    }
+
+    public static String makeMonsterPath(String resourcePath){
+        return getModID() + "Resources/images/monsters/" + resourcePath;
     }
     
     // =============== /MAKE IMAGE PATHS/ =================

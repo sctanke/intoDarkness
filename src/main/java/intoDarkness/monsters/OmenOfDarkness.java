@@ -1,5 +1,5 @@
 package intoDarkness.monsters;
-package com.evacipated.cardcrawl.mod.hubris.monsters;
+
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.MathUtils;
@@ -28,23 +28,17 @@ public class OmenOfDarkness extends AbstractMonster
     private static final byte FIRE_CANNON = 1;
     private static final byte WOUNDING_SHOT = 2;
     private static final byte NORMAL_SHOT = 3;
-    private static final byte IRRADIATE_BUFF = 4;
 
-    private static final float PARTICAL_EMIT_INTERVAL = 0.15f;
-
-    private float particleTimer = 0.0f;
 
     private int numTurns = 0;
 
     private boolean firstTurn = true;
     private int woundAmt;
-    private int irradiateAmt;
 
-    private int savedIrradiatedStack = 0;
 
     public OmenOfDarkness()
     {
-        super(NAME, ID, HP, -8.0f, 80.0f, 330, 530, intoDarknessResources.assetPath("images/monsters/theCity/monster_placeholder.png"), -100.0f, -100.0f);
+        super(NAME, ID, HP, -8.0f, 80.0f, 330, 530, "intoDarknessResources/images/monsters/monster_placeholder.png", -100.0f, -100.0f);
 
         this.type = EnemyType.BOSS; //todo figure out how to make it the first
         this.dialogX = (-400.0F * Settings.scale);
@@ -55,7 +49,6 @@ public class OmenOfDarkness extends AbstractMonster
         damage.add(2, new DamageInfo(this, 16));
 
         woundAmt = 1;
-        irradiateAmt = 3;
     }
 
     @Override
@@ -69,45 +62,22 @@ public class OmenOfDarkness extends AbstractMonster
 
     private void queueDamageAction(DamageInfo damageInfo)
     {
-        int basePureDamage = damageInfo.output / 2;
-        int baseNormalDamage = damageInfo.output - basePureDamage;
-        if (hasPower(ArmorPiercingPower.POWER_ID) && AbstractDungeon.player.currentBlock >= baseNormalDamage) {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, new DamageInfo(this, baseNormalDamage, DamageInfo.DamageType.NORMAL)));
-            AbstractDungeon.actionManager.addToBottom(new PureDamageAction(AbstractDungeon.player, new DamageInfo(null, basePureDamage, DamageInfo.DamageType.HP_LOSS)));
-        } else {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, damageInfo));
-        }
     }
 
     @Override
     public void takeTurn()
     {
-        if (nextMove == LOAD_CANNON) {
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this, this, ArmorPiercingPower.POWER_ID));
-            if (hasPower(IrradiatedRoundsPower.POWER_ID)) {
-                savedIrradiatedStack = getPower(IrradiatedRoundsPower.POWER_ID).amount;
-                AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this, this, IrradiatedRoundsPower.POWER_ID));
-            } else {
-                savedIrradiatedStack = 0;
-            }
-        } else if (nextMove == FIRE_CANNON) {
-            queueDamageAction(damage.get(0));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ArmorPiercingPower(this)));
-            if (savedIrradiatedStack > 0) {
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new IrradiatedRoundsPower(this, savedIrradiatedStack), savedIrradiatedStack));
-                savedIrradiatedStack = 0;
-            }
-        } else if (nextMove == WOUNDING_SHOT) {
+
+        if (nextMove == WOUNDING_SHOT) {
             queueDamageAction(damage.get(1));
 
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this,
                     new WeakPower(AbstractDungeon.player, woundAmt, true), woundAmt));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this,
                     new FrailPower(AbstractDungeon.player, woundAmt, true), woundAmt));
-        } else if (nextMove == NORMAL_SHOT) {
+        } else if (1==1) {
             queueDamageAction(damage.get(2));
-        } else if (nextMove == IRRADIATE_BUFF) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new IrradiatedRoundsPower(this, irradiateAmt), irradiateAmt));
         }
 
         AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
@@ -116,7 +86,7 @@ public class OmenOfDarkness extends AbstractMonster
     @Override
     protected void getMove(int num) /* choses attack */
     {
-        if (lastMove(LOAD_CANNON)) {
+    /*    if (lastMove(LOAD_CANNON)) {
             setMove(FIRE_CANNON, Intent.ATTACK, damage.get(0).base);
             return;
         }
@@ -131,7 +101,7 @@ public class OmenOfDarkness extends AbstractMonster
         } else {
             setMove(NORMAL_SHOT, Intent.ATTACK, damage.get(2).base);
         }
-
+*/
         ++numTurns;
     }
 
@@ -139,14 +109,6 @@ public class OmenOfDarkness extends AbstractMonster
     public void update() //fancy effects?
     {
         super.update();
-
-        if (nextMove == FIRE_CANNON) {
-            particleTimer -= Gdx.graphics.getDeltaTime();
-            if (particleTimer < 0) {
-                particleTimer = PARTICAL_EMIT_INTERVAL;
-                AbstractDungeon.topLevelEffectsQueue.add(new DeadTorchParticleEffect(hb.x + hb.width - 15.0f * Settings.scale, hb.y + 150.0f * Settings.scale));
-            }
-        }
     }
 
     @Override
