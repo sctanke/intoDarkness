@@ -20,6 +20,8 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
+import intoDarkness.monsters.OmenOfDarkness;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import intoDarkness.cards.*;
@@ -354,16 +356,19 @@ public class DefaultMod implements
         // =============== /EVENTS/ =================
         logger.info("Done loading badge Image and mod options");
 
-        //==============/Monsters/==============
-        BaseMod.addMonster(MyBoss.ID, () -> new MyBoss());
+        //==============/MONSTERS/===================
 
-        BaseMod.addBoss(Exordium.ID, MyBoss.ID,
-                "images/mymod/ui/map/boss/myBoss.png",
-                "images/mymod/ui/map/bossOutline/myBoss.png");
+        //BaseMod.addMonster(OmenOfDarkness.ID, () -> new OmenOfDarkness());
+
+        BaseMod.addBoss(TheCity.ID, OmenOfDarkness.ID,
+                "images/monsters/monster_placeholder.png",
+                "images/monster/monster_placeholder.png");
+
+        //==============/MONSTERS/===================
     }
 
 
-    }
+
     
     // =============== / POST-INITIALIZE/ =================
     
