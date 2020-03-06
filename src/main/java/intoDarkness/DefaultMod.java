@@ -34,6 +34,11 @@ import intoDarkness.relics.DefaultClickableRelic;
 import intoDarkness.relics.PlaceholderRelic;
 import intoDarkness.relics.PlaceholderRelic2;
 import intoDarkness.relics.TestRelic;
+import intoDarkness.relics.IngrainedFear;
+import intoDarkness.relics.MarkOfTheBeast;
+import intoDarkness.relics.SlotMachine;
+import intoDarkness.relics.CursedRevolver;
+import intoDarkness.relics.Bloodthirster;
 
 import intoDarkness.util.IDCheckDontTouchPls;
 import intoDarkness.util.TextureLoader;
@@ -383,6 +388,11 @@ public class DefaultMod implements
         // This adds a relic to the Shared pool. Every character can find this relic.
         BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
         BaseMod.addRelic(new TestRelic(), RelicType.SHARED);
+        BaseMod.addRelic(new IngrainedFear(), RelicType.SHARED);
+        BaseMod.addRelic(new MarkOfTheBeast(), RelicType.SHARED);
+        BaseMod.addRelic(new SlotMachine(), RelicType.SHARED);
+        BaseMod.addRelic(new CursedRevolver(), RelicType.SHARED);
+        BaseMod.addRelic(new Bloodthirster(), RelicType.SHARED);
         
         // Mark relics as seen (the others are all starters so they're marked as seen in the character file
         UnlockTracker.markRelicAsSeen(BottledPlaceholderRelic.ID);

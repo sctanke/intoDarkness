@@ -38,11 +38,39 @@
       "Select a card to bottle for "
     ]
   },
-  "intoDarkness:ShroudOfDarkness": {
-    "NAME": "Shroud of Darkness",
-    "FLAVOR": "The Darkness surrounds you",
+  "intoDarkness:IngrainedFear": {
+    "NAME": "Ingrained Fear",
+    "FLAVOR": "Spooky Scary",
     "DESCRIPTIONS": [
-      "Reasons"
+      "Gain 1 weak at battle start"
+    ]
+  },
+  "intoDarkness:MarkOfTheBeast": {
+    "NAME": "Mark of the Beast",
+    "FLAVOR": "With great sacrifice comes great reward.",
+    "DESCRIPTIONS": [
+      "Gain 6 Dex, 6 Strength, and 6 Artifact."
+    ]
+  },
+  "intoDarkness:SlotMachine": {
+    "NAME": "Slot Machine",
+    "FLAVOR": "Care to test your luck?",
+    "DESCRIPTIONS": [
+      "Provides a random effect in battle."
+    ]
+  },
+  "intoDarkness:CursedRevolver": {
+    "NAME": "Cursed Revolver",
+    "FLAVOR": "One in the chamber.",
+    "DESCRIPTIONS": [
+      "1/6 chance to deal 60 damage. Otherwise take 5 damage."
+    ]
+  },
+  "intoDarkness:Bloodthirster": {
+    "NAME": "Bloodthirster",
+    "FLAVOR": "Heal yourself by harming others. Just like real life.",
+    "DESCRIPTIONS": [
+      "Heal for 1 health with each card played."
     ]
   }
 }
