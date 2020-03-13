@@ -44,9 +44,12 @@ public class twoDoors extends AbstractImageEvent {
 
                         screenNum = 1;
 
-                        AbstractCard c = new TestRelic.makeCopy();
-                        AbstractDungeon.effectList.add(
-                                new ShowCardAndObtainEffect(c, (float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2)));
+                        //AbstractCard c = new TestRelic.makeCopy();
+                        //AbstractDungeon.effectList.add(
+                                //new ShowCardAndObtainEffect(c, (float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2)));
+
+                        AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f,
+                                RelicLibrary.getRelic(TestRelic.ID).makeCopy());
                         break;
                     case 1:
                         this.imageEventText.updateBodyText("you see a door of darkness");
