@@ -50,6 +50,8 @@ public class twoDoors extends AbstractImageEvent {
 
                         AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f,
                                 RelicLibrary.getRelic(TestRelic.ID).makeCopy());
+
+
                         break;
                     case 1:
                         this.imageEventText.updateBodyText("you see a door of darkness");
