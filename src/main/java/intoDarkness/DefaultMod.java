@@ -25,7 +25,7 @@ import org.apache.logging.log4j.Logger;
 import intoDarkness.cards.*;
 import intoDarkness.characters.TheDefault;
 import intoDarkness.events.IdentityCrisisEvent;
-import intoDarkness.events.twoDoors
+import intoDarkness.events.twoDoors;
 /**
  * Enter stuff
  */
