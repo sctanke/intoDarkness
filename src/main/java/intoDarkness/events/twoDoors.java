@@ -27,6 +27,7 @@ public class twoDoors extends AbstractImageEvent {
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     private static final String[] OPTIONS = eventStrings.OPTIONS;
 
+
     public twoDoors(){
         super(ID, "My body text", IMG);
         this.imageEventText.setDialogOption("Light Door");
