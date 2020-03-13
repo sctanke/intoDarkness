@@ -174,9 +174,8 @@ public class DefaultMod implements
         return getModID() + "Resources/images/events/" + resourcePath;
     }
 
-    public static String makeMonsterPath(String resourcePath){
-        return getModID() + "Resources/images/monsters/" + resourcePath;
-    }
+
+
     
     // =============== /MAKE IMAGE PATHS/ =================
     
@@ -362,7 +361,7 @@ public class DefaultMod implements
 
         //==============/MONSTERS/===================
 
-        //BaseMod.addMonster(OmenOfDarkness.ID, () -> new OmenOfDarkness());
+        BaseMod.addMonster(OmenOfDarkness.ID, () -> new OmenOfDarkness());
 
         BaseMod.addBoss(TheCity.ID, OmenOfDarkness.ID,
                 "images/monsters/monster_placeholder.png",

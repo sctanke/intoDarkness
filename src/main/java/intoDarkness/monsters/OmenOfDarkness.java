@@ -98,10 +98,10 @@ public class OmenOfDarkness extends AbstractMonster
             firstTurn = false;
         } else if (num < 60 && !lastMove(IRRADIATE_BUFF)) {
             setMove(IRRADIATE_BUFF, Intent.BUFF);
-        } else {
+     */
             setMove(NORMAL_SHOT, Intent.ATTACK, damage.get(2).base);
-        }
-*/
+
+
         ++numTurns;
     }
 
