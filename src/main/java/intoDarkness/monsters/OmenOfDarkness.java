@@ -86,19 +86,7 @@ public class OmenOfDarkness extends AbstractMonster
     @Override
     protected void getMove(int num) /* choses attack */
     {
-    /*    if (lastMove(LOAD_CANNON)) {
-            setMove(FIRE_CANNON, Intent.ATTACK, damage.get(0).base);
-            return;
-        }
-        if (numTurns == 4) {
-            setMove("Load Cannon", LOAD_CANNON, Intent.UNKNOWN);
-            numTurns = 0;
-        } else if (firstTurn || num < 40) {
-            setMove(WOUNDING_SHOT, Intent.ATTACK_DEBUFF, damage.get(1).base);
-            firstTurn = false;
-        } else if (num < 60 && !lastMove(IRRADIATE_BUFF)) {
-            setMove(IRRADIATE_BUFF, Intent.BUFF);
-     */
+            //Use if statments and stuff
             setMove(NORMAL_SHOT, Intent.ATTACK, damage.get(2).base);
 
 
