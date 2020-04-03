@@ -61,9 +61,9 @@ public class twoDoors extends AbstractImageEvent {
                         
                         screenNum = 1;
 
-                        c = new TestRelic.makeCopy();
-                        AbstractDungeon.effectList.add(
-                                new ShowCardAndObtainEffect(c, (float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2)));
+                        //c = new TestRelic.makeCopy();
+                        //AbstractDungeon.effectList.add(
+                                //new ShowCardAndObtainEffect(c, (float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2)));
                         break;
 
                 }
