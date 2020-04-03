@@ -31,9 +31,14 @@ public class Bloodthirster extends CustomRelic {
     }
 
 
+    //todo add a counter to track num cards
     public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction) {
         flash();
-        AbstractDungeon.actionManager.addToTop(new HealAction(AbstractDungeon.player, AbstractDungeon.player, 1));
+        int cards_played=0;
+        if(cards_played%10==0) {
+            AbstractDungeon.actionManager.addToTop(new HealAction(AbstractDungeon.player, AbstractDungeon.player, 1));
+        }
+        cards_played++;
     }
 
 
