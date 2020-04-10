@@ -11,12 +11,12 @@ import intoDarkness.util.TextureLoader;
 import static intoDarkness.DefaultMod.makeRelicOutlinePath;
 import static intoDarkness.DefaultMod.makeRelicPath;
 
-public class TestRelic extends CustomRelic {
-    public static final String ID = DefaultMod.makeID("TestRelic");
+public class ShroudOfDarkness extends CustomRelic {
+    public static final String ID = DefaultMod.makeID("ShroudOfDarkness");
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("PlaceHolder.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("PlaceHolder.png"));
 
-    public TestRelic() {
+    public ShroudOfDarkness() {
         super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.MAGICAL);
     }
 
@@ -27,17 +27,11 @@ public class TestRelic extends CustomRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0]; // DESCRIPTIONS pulls from your localization file
+        return DESCRIPTIONS[0];
     }
 
     @Override
     public void onEquip() {
-        //?AbstractDungeon.player.decreaseMaxHealth(1);
-    }
-    /*@Override
-    public AbstractRelic makeCopy()
-    {
-        return new TestRelic();
-    }*/
-}
 
+    }
+}

@@ -20,6 +20,8 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
+import intoDarkness.monsters.OmenOfDarkness;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import intoDarkness.cards.*;
@@ -35,6 +37,11 @@ import intoDarkness.relics.DefaultClickableRelic;
 import intoDarkness.relics.PlaceholderRelic;
 import intoDarkness.relics.PlaceholderRelic2;
 import intoDarkness.relics.TestRelic;
+import intoDarkness.relics.IngrainedFear;
+import intoDarkness.relics.MarkOfTheBeast;
+import intoDarkness.relics.SlotMachine;
+import intoDarkness.relics.CursedRevolver;
+import intoDarkness.relics.Bloodthirster;
 
 import intoDarkness.util.IDCheckDontTouchPls;
 import intoDarkness.util.TextureLoader;
@@ -167,7 +174,10 @@ public class DefaultMod implements
     public static String makeEventPath(String resourcePath) {
         return getModID() + "Resources/images/events/" + resourcePath;
     }
-    
+
+
+
+
     // =============== /MAKE IMAGE PATHS/ =================
     
     // =============== /INPUT TEXTURE LOCATION/ =================
@@ -350,8 +360,21 @@ public class DefaultMod implements
 
         // =============== /EVENTS/ =================
         logger.info("Done loading badge Image and mod options");
+
+        //==============/MONSTERS/===================
+
+        BaseMod.addMonster(OmenOfDarkness.ID, () -> new OmenOfDarkness());
+
+        BaseMod.addBoss(TheCity.ID, OmenOfDarkness.ID,
+                "images/monsters/monster_placeholder.png",
+                "images/monster/monster_placeholder.png");
+
+        //==============/MONSTERS/===================
     }
-    
+
+
+
+
     // =============== / POST-INITIALIZE/ =================
     
     
@@ -385,7 +408,12 @@ public class DefaultMod implements
         // This adds a relic to the Shared pool. Every character can find this relic.
         BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
         BaseMod.addRelic(new TestRelic(), RelicType.SHARED);
-        
+        BaseMod.addRelic(new IngrainedFear(), RelicType.SHARED);
+        BaseMod.addRelic(new MarkOfTheBeast(), RelicType.SHARED);
+        BaseMod.addRelic(new SlotMachine(), RelicType.SHARED);
+        BaseMod.addRelic(new CursedRevolver(), RelicType.SHARED);
+        BaseMod.addRelic(new Bloodthirster(), RelicType.SHARED);
+
         // Mark relics as seen (the others are all starters so they're marked as seen in the character file
         UnlockTracker.markRelicAsSeen(BottledPlaceholderRelic.ID);
         logger.info("Done adding relics!");
