@@ -27,7 +27,7 @@ import org.apache.logging.log4j.Logger;
 import intoDarkness.cards.*;
 import intoDarkness.characters.TheDefault;
 import intoDarkness.events.IdentityCrisisEvent;
-/**
+/*
  * Enter stuff
  */
 import intoDarkness.potions.PlaceholderPotion;
@@ -173,6 +173,9 @@ public class DefaultMod implements
     public static String makeEventPath(String resourcePath) {
         return getModID() + "Resources/images/events/" + resourcePath;
     }
+
+
+
     
     // =============== /MAKE IMAGE PATHS/ =================
     
@@ -355,7 +358,20 @@ public class DefaultMod implements
         
         // =============== /EVENTS/ =================
         logger.info("Done loading badge Image and mod options");
+
+        //==============/MONSTERS/===================
+
+        BaseMod.addMonster(OmenOfDarkness.ID, () -> new OmenOfDarkness());
+
+        BaseMod.addBoss(TheCity.ID, OmenOfDarkness.ID,
+                "images/monsters/monster_placeholder.png",
+                "images/monster/monster_placeholder.png");
+
+        //==============/MONSTERS/===================
     }
+
+
+
     
     // =============== / POST-INITIALIZE/ =================
     
