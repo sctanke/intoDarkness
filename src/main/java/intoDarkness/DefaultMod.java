@@ -20,7 +20,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
-import intoDarkness.monsters.OmenOfDarkness;
+import intoDarkness.monsters.*;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -364,10 +364,17 @@ public class DefaultMod implements
         //==============/MONSTERS/===================
 
         BaseMod.addMonster(OmenOfDarkness.ID, () -> new OmenOfDarkness());
+        BaseMod.addMonster(BigBad.ID, () -> new BigBad());
 
         BaseMod.addBoss(TheCity.ID, OmenOfDarkness.ID,
                 "images/monsters/monster_placeholder.png",
                 "images/monster/monster_placeholder.png");
+
+        BaseMod.addBoss(TheCity.ID, BigBad.ID,
+                "images/monsters/monster_placeholder.png",
+                "images/monster/monster_placeholder.png");
+
+
 
         //==============/MONSTERS/===================
     }

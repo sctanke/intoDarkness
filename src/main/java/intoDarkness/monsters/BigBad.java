@@ -1,28 +1,24 @@
 package intoDarkness.monsters;
 
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.FrailPower;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
-public class OmenOfDarkness extends AbstractMonster
+public class BigBad extends AbstractMonster
 {
-    public static final String ID = "intoDarkness:OmenOfDarkness";
-    public static final String NAME = "Omen Of Darkness";
+    public static final String ID = "intoDarkness:BigBad";
+    public static final String NAME = "Big Bad";
     public static final String[] MOVES = {};
-    public static final int HP = 6 * AbstractDungeon.ascensionLevel;
+    public static final int HP = 666;
 
     private static final byte LOAD_CANNON = 0;
     private static final byte FIRE_CANNON = 1;
@@ -36,15 +32,13 @@ public class OmenOfDarkness extends AbstractMonster
     private int woundAmt;
 
 
-    public OmenOfDarkness()
+    public BigBad()
     {
         super(NAME, ID, HP, -8.0f, 80.0f, 330, 530, "intoDarknessResources/images/monsters/monster_placeholder.png", -100.0f, -100.0f);
 
         this.type = EnemyType.BOSS; //todo figure out how to make it the first
         this.dialogX = (-400.0F * Settings.scale);
         this.dialogY = (200.0F * Settings.scale);
-
-
 
         damage.add(0, new DamageInfo(this, 50));
         damage.add(1, new DamageInfo(this, 10));
@@ -59,7 +53,7 @@ public class OmenOfDarkness extends AbstractMonster
         CardCrawlGame.music.unsilenceBGM();
         AbstractDungeon.scene.fadeOutAmbiance();
         AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_CITY");
-
+        
     }
 
     private void queueDamageAction(DamageInfo damageInfo)
@@ -107,7 +101,7 @@ public class OmenOfDarkness extends AbstractMonster
         useFastShakeAnimation(5.0F);
         CardCrawlGame.screenShake.rumble(4.0F);
         deathTimer += 1.5F;
-        super.die(true);
+        super.die();
         int roll = MathUtils.random(2);
         if (roll == 0) {
             CardCrawlGame.sound.play("VO_CULTIST_2A");
@@ -116,6 +110,6 @@ public class OmenOfDarkness extends AbstractMonster
         } else {
             CardCrawlGame.sound.play("VO_CULTIST_2C");
         }
-
+        onBossVictoryLogic();
     }
 }
