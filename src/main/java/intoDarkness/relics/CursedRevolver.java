@@ -23,7 +23,7 @@ import static intoDarkness.DefaultMod.makeRelicPath;
 public class CursedRevolver extends CustomRelic implements ClickableRelic { // You must implement things you want to use from StSlib
     /*
      *
-     * Usable once per turn. Right click: 1/6 chance for 60 damage. Otherwise take 5 damage.
+     * Usable once per turn. Right click: 1/6 chance for 30 damage. Otherwise take 6 damage.
      */
 
     // ID, images, text.
