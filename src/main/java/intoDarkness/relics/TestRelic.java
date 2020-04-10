@@ -34,10 +34,10 @@ public class TestRelic extends CustomRelic {
     public void onEquip() {
         //?AbstractDungeon.player.decreaseMaxHealth(1);
     }
-    @Override
+    /*@Override
     public AbstractRelic makeCopy()
     {
         return new TestRelic();
-    }
+    }*/
 }
 
