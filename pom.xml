@@ -6,7 +6,7 @@
     <groupId>defaultmod</groupId>
     <artifactId>DefaultMod</artifactId>
     <name>Ascension into Darkness</name>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <description>As you stare into the abyss, the abyss stares back at you.</description>
 
     <properties>

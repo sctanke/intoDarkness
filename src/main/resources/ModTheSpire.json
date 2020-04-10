@@ -1,7 +1,7 @@
 {
   "modid": "${project.artifactId}",
   "name": "${project.name}",
-  "author_list": ["Gremious"],
+  "author_list": ["SE 186X 2020"],
   "description": "${project.description}",
   "version": "${project.version}",
   "sts_version": "${SlayTheSpire.version}",
