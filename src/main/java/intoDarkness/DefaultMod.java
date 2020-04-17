@@ -377,6 +377,10 @@ public class DefaultMod implements
 
 
         //==============/MONSTERS/===================
+
+        //=============/Act-1/================
+        //CustomDungeon.addAct(2, new YOURACTHERE(...))
+
     }
 
 
